@@ -1,0 +1,48 @@
+<!-- <form novalidate name="$ctrl.editClassified" ng-submit="$ctrl.classEdit($ctrl.classified)">
+  <div>
+    <label for="title">Title</label>
+    <input id="title" class="form-control" ng-model="$ctrl.classified.title" required>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input id="description" class="form-control" ng-model="$ctrl.classified.description" required>
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input id="price" class="form-control" ng-model="$ctrl.classified.price" required>
+  </div>
+  <div>
+    <label for="item_image">Item Image URL</label>
+    <input id="item_image" class="form-control" ng-model="$ctrl.classified.item_image" required>
+  </div>
+  <button type="submit" ng-disabled="$ctrl.editClassified.$invalid">
+    Update
+  </button>
+</form> -->
+
+<form novalidate name="$ctrl.editClassified" ng-submit="$ctrl.classEdit($ctrl.classified)">
+  <div id="tablediv"><table>
+    <tbody>
+      <tr>
+        <td><label for="title">Title: </label></td>
+        <td><input id="title" class="form-control" ng-model="$ctrl.classified.title" required></td>
+      </tr>
+      <tr>
+        <td><label for="description">Description: </label></td>
+        <td><input id="description" class="form-control" ng-model="$ctrl.classified.description" required></td>
+      </tr>
+      <tr>
+        <td><label for="price">Price: </label></td>
+        <td><input id="price" class="form-control" ng-model="$ctrl.classified.price" required></td>
+      </tr>
+      <tr>
+        <td><label for="item_image">Item Image URL: </label></td>
+        <td><input id="item_image" class="form-control" ng-model="$ctrl.classified.item_image" required></td>
+      </tr>
+    </tbody>
+  </table></div>
+  <br>
+  <button type="submit" ng-disabled="$ctrl.editClassified.$invalid">
+    Edit Post
+  </button>
+</form>
