@@ -1,6 +1,22 @@
 <h1 class="blink_text">Kevin's Classifieds</h1>
 <div class="buttondiv"><button ng-click="$ctrl.createClass()">Create Post</button></div>
-<ul ng-repeat="classified in $ctrl.classifieds">
+<br>
+<br>
+Sort By:
+<br>
+<input type="radio" name="sortRadio" ng-click="$ctrl.toggleOrderBy('created_at')" checked>Created Date</option>
+<br>
+<input type="radio" name="sortRadio" ng-click="$ctrl.toggleOrderBy('price')">Price</option>
+<br>
+<input type="radio" name="sortRadio" ng-click="$ctrl.toggleOrderBy('title')">Title</option>
+<br>
+<input type="radio" name="sortRadio" ng-click="$ctrl.toggleOrderBy('description')">Description</option>
+<br>
+<br>
+Search:
+<br>
+<input type="text" ng-model="$ctrl.searchField">
+<ul ng-repeat="classified in $ctrl.classifieds | orderBy:$ctrl.propertyToOrderBy | filter:$ctrl.searchField">
   <li style="border:1px solid black">
     <p class="blink_texttwo">Title: {{ classified.title }}</p>
     <p class="blink_textthree">Description: {{ classified.description }}</p>

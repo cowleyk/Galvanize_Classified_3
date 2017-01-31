@@ -14,11 +14,18 @@
     console.log('homeController');
 
     vm.$onInit = function(){
+      vm.propertyToOrderBy = 'created_at';
       $http.get('/classifieds').then((result)=>{
         // console.log(result);
         vm.classifieds = result.data;
       });
     };
+
+    vm.toggleOrderBy = function(input){
+      console.log(input);
+      vm.propertyToOrderBy = input;
+    }
+
 
     vm.createClass = function(){
       $state.go("classAdd", {});
